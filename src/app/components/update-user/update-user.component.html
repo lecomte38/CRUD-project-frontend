@@ -1,0 +1,37 @@
+<div class="modification-card-container">
+  <div class="modification-card modification-card-shadow">
+    <div class="modification-card-header">
+      <div class="modification-card-picture">
+        <img
+          class="user-picture"
+          src="/assets/images/user-update-icon.png"
+          alt="UPDATE"
+        />
+      </div>
+      <div class="modification-card__title">
+        <h3>Modification d'un utilisateur</h3>
+      </div>
+    </div>
+    <div class="modification-card-body">
+        <form class="modification-card__form">
+          <div class="modification-card__form-labels">
+            <div class="modification-card__label">ID</div>
+            <label class="modification-card__label" for="firstname">Prénom</label>
+            <label class="modification-card__label" for="lastname">Nom</label>
+          </div>
+          <div class="modification-card__form-fields">
+            <div class="modification-card__data data-unchangeable">#{{ user.id }}</div>
+            <input type="text" id="firstname" class="modification-card__data modification-card__field" [(ngModel)]="user.firstname" name="firstname" required />
+            <input type="text" id="lastname" class="modification-card__data modification-card__field"  [(ngModel)]="user.lastname" name="lastname" required />
+          </div>
+        </form>
+    </div>
+    <div class="modification-card__actions modification-card--border">
+      <div>
+        <button class="modification-card-button-container" (click)="updateUser()">
+          Modifier
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

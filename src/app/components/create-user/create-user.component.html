@@ -1,0 +1,35 @@
+<div class="creation-card-container">
+  <div class="creation-card creation-card-shadow">
+    <div class="creation-card-header">
+      <div class="creation-card-picture">
+        <img
+          class="user-picture"
+          src="/assets/images/user-create-icon.png"
+          alt="CREATE"
+        />
+      </div>
+      <div class="creation-card__title">
+        <h3>Création d'un utilisateur</h3>
+      </div>
+    </div>
+    <div class="creation-card-body">
+        <form class="creation-card__form">
+          <div class="creation-card__form-labels">
+            <label class="creation-card__label" for="firstname">Prénom</label>
+            <label class="creation-card__label" for="lastname">Nom</label>
+          </div>
+          <div class="creation-card__form-fields">
+            <input type="text" id="firstname" class="creation-card__data creation-card__field" [(ngModel)]="user.firstname" name="firstname" required />
+            <input type="text" id="lastname" class="creation-card__data creation-card__field"  [(ngModel)]="user.lastname" name="lastname" required />
+          </div>
+        </form>
+    </div>
+    <div class="creation-card__actions creation-card--border">
+      <div>
+        <button class="creation-card-button-container" (click)="saveUser()">
+          Créer
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

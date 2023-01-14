@@ -1,0 +1,172 @@
+/* Variables importation */
+@import "../../../assets/scss/_variables";
+
+/* Mixin (Media Queries) importation */
+@import "../../../assets/scss/_mixin";
+
+/* Title style */
+.container-title {
+  display: block;
+  width: 100%;
+  font-size: $users-card-page-title-size;
+  color: $tertiary-color;
+  margin-bottom: 50px;
+
+  h2 {
+    padding-bottom: 5px;
+  }
+
+  .title-line {
+    display: block;
+    width: auto;
+    border-bottom: $tertiary-color 2px solid;
+  }
+}
+
+/* Cards style */
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+
+  .card {
+    margin-bottom: $users-card-margin-bottom;
+    flex-basis: $users-card-flex-basis;
+    background: $users-card-background-color;
+    transition: $users-card-transition;
+
+    .card__title {
+      display: block;
+      align-items: center;
+      justify-content: stretch;
+      line-height: normal;
+      padding: 16px;
+      box-sizing: border-box;
+
+      .card__title-text {
+        color: inherit;
+        padding-top: 0;
+        margin: 0;
+        font-size: $users-card-card-title-size;
+        font-weight: 300;
+        line-height: normal;
+        overflow: hidden;
+      }
+    }
+
+    .card__information-text {
+      overflow: hidden;
+      color: $interface-crud-content-color;
+      line-height: 18px;
+      padding: 16px;
+      width: 100%;
+    }
+
+    .card__actions.card--border {
+      border-top: $interface-crud-actions-border-top;
+
+      .button__link {
+        display: inline-block;
+        color: $secondary-color;
+        font-family: $button-font-family;
+        text-transform: uppercase;
+        height: 36px;
+        min-width: 64px;
+        margin: 0;
+        padding: 0 16px;
+        line-height: 36px;
+        font-size: 13.9px;
+        font-weight: 500;
+        letter-spacing: 0;
+        overflow: hidden;
+        outline: none;
+        vertical-align: middle;
+        text-align: center;
+        transition: $button-transition;
+
+        .button__link-span {
+          display: none;
+        }
+      }
+
+      .button__link:hover {
+        color: $primary-color;
+        background-color: $secondary-color;
+      }
+
+      /* Button media Queries for phone and tablet */
+      @include media-max(tablet-down) {
+        display: flex;
+        justify-content: space-between;
+        background-color: transparent;
+
+        .button__link {
+          background-color: transparent;
+          text-indent: -9999px;
+          line-height: 0;
+          height: 36px;
+          min-width: 64px;
+          margin: 5px;
+          padding: 16px;
+          line-height: 36px;
+          font-size: 13.9px;
+          font-weight: 500;
+          letter-spacing: 0;
+        }
+
+        .button__link:hover {
+          color: transparent;
+          background-color: transparent;
+        }
+
+        .button__link::after {
+          display: block;
+          content: "a";
+          color: transparent;
+          height: 36px;
+          min-width: 64px;
+          margin: 5px;
+          padding: 16px;
+          line-height: 36px;
+          font-size: 13.9px;
+          font-weight: 500;
+          letter-spacing: 0;
+          overflow: hidden;
+          outline: none;
+          text-align: center;
+          text-indent: 0;
+          line-height: initial;
+        }
+
+        .button__link-view {
+          background: url($button-link-view) no-repeat center/contain;
+        }
+
+        .button__link-update {
+          background: url($button-link-update) no-repeat center/contain;
+        }
+
+        .button__link-delete {
+          background: url($button-link-delete) no-repeat center/contain;
+        }
+      }
+    }
+  }
+
+  .card > .card__title {
+    color: $users-card-title-color;
+    height: 230px;
+    background: url($users-card-background-url) no-repeat center/contain;
+    background-origin: content-box;
+    background-color: $tertiary-color;
+  }
+
+  .card-shadow {
+    box-shadow: $interface-crud-box-shadow;
+  }
+
+  .card:hover {
+    transform: scale(1.015);
+    transition: transform $users-card-transition;
+  }
+}

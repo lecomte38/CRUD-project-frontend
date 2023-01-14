@@ -1,0 +1,43 @@
+<div class="suppression-card-container">
+  <div class="suppression-card suppression-card-shadow">
+    <div class="suppression-card-header">
+      <div class="suppression-card-picture">
+        <img
+          class="user-picture"
+          src="/assets/images/user-delete-icon.png"
+          alt="DELETE"
+        />
+      </div>
+      <div class="suppression-card__title">
+        <h3>Suppression d'un utilisateur</h3>
+      </div>
+    </div>
+    <div class="suppression-card-body">
+      <div class="suppression-card__information-text">
+        <table class="suppression-card__information-table">
+          <tbody>
+            <tr>
+              <th scope="row">ID</th>
+              <td>#{{ user.id }}</td>
+            </tr>
+            <tr>
+              <th scope="row">Prénom</th>
+              <td>{{ user.firstname }}</td>
+            </tr>
+            <tr>
+              <th scope="row">Nom</th>
+              <td>{{ user.lastname }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div class="suppression-card__actions suppression-card--border">
+      <div>
+        <button class="suppression-card-button-container" (click)="deleteUser()">
+          Supprimer
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

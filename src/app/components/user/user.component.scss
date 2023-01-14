@@ -1,0 +1,115 @@
+/* Variables importation */
+@import "../../../assets/scss/_variables";
+
+/* Mixin (Media Queries) importation */
+@import "../../../assets/scss/_mixin";
+
+/* Card style */
+.profil-card-container {
+  display: block;
+
+  .profil-card {
+    margin: auto;
+    width: $user-card-size;
+    background-color: $interface-crud-background-color;
+
+    .profil-card-header {
+      display: flex;
+      justify-content: flex-start;
+      padding: 3vh;
+      border-bottom: 1px $tertiary-color solid;
+      height: 175px;
+
+      .profil-card-picture {
+        flex-basis: 30%;
+        height: 100%;
+        margin-right: 1.5vw;
+        display: flex;
+
+        .user-picture {
+          width: 50%;
+          margin: auto;
+        }
+      }
+
+      .profil-card__title {
+        display: flex;
+        align-items: center;
+        font-size: 1.8rem;
+        padding-left: 2vh;
+      }
+    }
+
+    .profil-card-body {
+      padding: 3vh;
+
+      .profil-card__information-table {
+        width: 100%;
+        border-collapse: collapse;
+        color: $interface-crud-content-color;
+        text-align: left;
+
+        td,
+        th {
+          padding: 20px;
+        }
+
+        th {
+          color: $tertiary-color;
+          width: 30%;
+          border-right: 1px $secondary-color solid;
+          text-align: left;
+        }
+
+        td {
+          padding-left: 5vh;
+          border-bottom: 1px $secondary-color solid;
+        }
+      }
+    }
+
+    .profil-card__actions.profil-card--border {
+      border-top: $interface-crud-actions-border-top;
+      display: flex;
+
+      .profil-card-button-container {
+        display: inline-block;
+        flex-basis: 50%;
+        color: $secondary-color;
+        font-family: $button-font-family;
+        text-transform: uppercase;
+        height: 36px;
+        margin: 0;
+        padding: 0 16px;
+        line-height: 36px;
+        font-size: 14px;
+        font-weight: 500;
+        letter-spacing: 0;
+        overflow: hidden;
+        outline: none;
+        vertical-align: middle;
+        text-align: center;
+        transition: $button-transition;
+      }
+
+      .profil-card-button-container:hover {
+        color: $primary-color;
+        background-color: $secondary-color;
+      }
+    }
+
+    /* Interface media queries for tablet */
+    @include media-max(tablet-down) {
+      width: $interface-phone-crud-size;
+    }
+
+    /* Interface media queries for phone */
+    @include media-max(phone-down) {
+      width: $interface-tablet-crud-size;
+    }
+  }
+
+  .profil-card-shadow {
+    box-shadow: $interface-crud-box-shadow;
+  }
+}

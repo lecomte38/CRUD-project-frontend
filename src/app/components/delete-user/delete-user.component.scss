@@ -1,0 +1,118 @@
+/* Variables importation */
+@import "../../../assets/scss/_variables";
+
+/* Mixin (Media Queries) importation */
+@import "../../../assets/scss/_mixin";
+
+/* Suppression card style */
+.suppression-card-container {
+  display: block;
+
+  .suppression-card {
+    margin: auto;
+    width: $interface-crud-size;
+    background-color: $interface-crud-background-color;
+
+    .suppression-card-header {
+      display: flex;
+      justify-content: flex-start;
+      padding: 3vh;
+      border-bottom: 1px $tertiary-color solid;
+      height: 175px;
+
+      .suppression-card-picture {
+        flex-basis: 30%;
+        height: 100%;
+        margin-right: 1.5vw;
+        display: flex;
+
+        .user-picture {
+          width: 50%;
+          margin: auto;
+        }
+      }
+
+      .suppression-card__title {
+        display: flex;
+        align-items: center;
+        font-size: 1.4rem;
+        padding-left: 2vh;
+      }
+    }
+
+    .suppression-card-body {
+      padding: 3vh;
+
+      .suppression-card__information-table {
+        width: 100%;
+        border-collapse: collapse;
+        color: $interface-crud-content-color;
+        text-align: left;
+
+        td,
+        th {
+          padding: 20px;
+        }
+
+        th {
+          color: $tertiary-color;
+          width: 30%;
+          border-right: 1px $secondary-color solid;
+          text-align: left;
+        }
+
+        td {
+          padding-left: 5vh;
+          border-bottom: 1px $secondary-color solid;
+        }
+      }
+    }
+
+    .suppression-card__actions.suppression-card--border {
+      border-top: $interface-crud-actions-border-top;
+
+      .suppression-card-button-container {
+        display: inline-block;
+        width: 100%;
+        border: none;
+        background: none;
+        color: $button-delete-color;
+        font-family: $button-font-family;
+        text-transform: uppercase;
+        height: 36px;
+        min-width: 64px;
+        margin: 0;
+        padding: 0 16px;
+        line-height: 36px;
+        font-size: 14px;
+        font-weight: 500;
+        letter-spacing: 0;
+        overflow: hidden;
+        outline: none;
+        vertical-align: middle;
+        text-align: center;
+        transition: $button-transition;
+        cursor: $interface-crud-button-cursor;
+      }
+
+      .suppression-card-button-container:hover {
+        color: $primary-color;
+        background-color: $button-delete-color;
+      }
+    }
+
+    /* Interface media queries for tablet */
+    @include media-max(tablet-down) {
+      width: $interface-phone-crud-size;
+    }
+
+    /* Interface media queries for phone */
+    @include media-max(phone-down) {
+      width: $interface-tablet-crud-size;
+    }
+  }
+
+  .suppression-card-shadow {
+    box-shadow: $interface-crud-box-shadow;
+  }
+}

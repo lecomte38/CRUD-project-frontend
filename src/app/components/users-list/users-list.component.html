@@ -1,0 +1,31 @@
+<div class="container-title">
+  <h2>Utilisateurs</h2>
+  <span class="title-line"></span>
+</div>
+<div class="card-container">
+  <div class="card mdl-card card-shadow" *ngFor="let user of users">
+    <div class="card__title">
+      <h2 class="card__title-text">
+        {{ user.firstname }} <br /> {{ user.lastname }}
+      </h2>
+    </div>
+    <div class="card__information-text">
+      <p>
+        ID : #{{ user.id }}<br />
+        Prénom : {{ user.firstname }}<br />
+        Nom : {{ user.lastname }}
+      </p>
+    </div>
+    <div class="card__actions card--border">
+      <a routerLink="../users/{{ user.id }}" class="button__link button__link-view">
+        Inspecter
+      </a>
+      <a routerLink="../update_users/{{ user.id }}" class="button__link button__link-update">
+        Modifier
+      </a>
+      <a routerLink="../delete_users/{{ user.id }}" class="button__link button__link-delete">
+        Supprimer
+      </a>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,217 @@
+@import "../assets/scss/_variables";
+
+/* Mixin (Media Queries) importation */
+@import "../assets/scss/_mixin";
+
+/* Header / Navbar */
+header {
+  height: $navbar-height;
+  width: 100%;
+  background-color: $tertiary-color;
+  display: flex;
+
+  .navbar {
+    width: 100%;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+
+    .left-navbar {
+      flex-basis: 35%;
+
+      .navbar-brand {
+        font-size: $navbar-brand-size;
+        color: $primary-color;
+        margin-left: 35px;
+      }
+    }
+
+    .right-navbar {
+      flex-basis: 65%;
+      display: flex;
+      justify-content: flex-end;
+
+      #nav-toggle {
+        display: none;
+      }
+
+      .nav-button-container {
+        display: none;
+        height: 100%;
+        width: 30px;
+        cursor: pointer;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-right: 35px;
+
+        .nav-button,
+        .nav-button::before,
+        .nav-button::after {
+          display: block;
+          background-color: $primary-color;
+          position: absolute;
+          height: 4px;
+          width: 30px;
+          transition: transform 400ms cubic-bezier(0.23, 1, 0.32, 1);
+          border-radius: 2px;
+        }
+
+        .nav-button::before {
+          content: "";
+          margin-top: -8px;
+        }
+
+        .nav-button::after {
+          content: "";
+          margin-top: 8px;
+        }
+      }
+
+      #nav-toggle:checked + .nav-button-container .nav-button::before {
+        margin-top: 0px;
+        transform: rotate(405deg);
+      }
+
+      #nav-toggle:checked + .nav-button-container .nav-button {
+        background: transparent;
+      }
+
+      #nav-toggle:checked + .nav-button-container .nav-button::after {
+        margin-top: 0px;
+        transform: rotate(-405deg);
+      }
+
+      .nav {
+        margin-top: auto;
+        margin-bottom: auto;
+        padding: auto;
+        display: flex;
+        flex-direction: row;
+        list-style-type: none;
+
+        .nav-item {
+          display: inline;
+          padding-right: 50px;
+
+          .nav-link {
+            font-size: $navbar-link-size;
+          }
+        }
+      }
+
+      /* Navbar media Queries for phone */
+      @include media-max(phone-down) {
+        .nav-button-container {
+          display: flex;
+        }
+
+        .nav {
+          z-index: 999;
+          position: absolute;
+          top: 0;
+          margin-top: 77.5px;
+          left: 0;
+          flex-direction: column;
+          width: 100%;
+          justify-content: center;
+          align-items: center;
+
+          li:hover {
+            background-color: $secondary-color;
+
+            a {
+              display: block;
+              width: 100%;
+            }
+
+            a:hover::before {
+              transform: scaleX(0);
+            }
+          }
+        }
+
+        #nav-toggle ~ .nav li {
+          height: 0;
+          margin: 0;
+          padding: 0;
+          border: 0;
+          transition: height 250ms cubic-bezier(0.23, 1, 0.32, 1);
+        }
+
+        #nav-toggle:checked ~ .nav li {
+          border-top: 1px solid $navbar-burger-border-color;
+          height: 2.5rem;
+          padding: 0.5em;
+          margin-top: auto;
+          margin-bottom: auto;
+          transition: height 250ms cubic-bezier(0.23, 1, 0.32, 1);
+        }
+
+        .nav > li {
+          overflow: hidden;
+          display: flex;
+          justify-content: center;
+          margin: 0;
+          padding: 0.5em 0;
+          width: 100%;
+          color: $primary-color;
+          background-color: #222;
+        }
+
+        .nav > li:not(:last-child) {
+          border-bottom: 1px solid $navbar-burger-border-color;
+        }
+      }
+    }
+
+    a {
+      color: $primary-color;
+      margin: auto;
+      transition: 0.2s;
+      position: relative;
+      padding-bottom: 5px;
+    }
+
+    a::before {
+      content: "";
+      position: absolute;
+      display: block;
+      width: 100%;
+      height: 2px;
+      bottom: 0;
+      left: 0;
+      background-color: $secondary-color;
+      transform: scaleX(0);
+      transform-origin: top left;
+      transition: transform 0.3s ease;
+    }
+
+    a:hover::before {
+      transform: scaleX(1);
+    }
+  }
+}
+
+/* Main content */
+main {
+  position: relative;
+  min-height: $main-height;
+  width: 100%;
+
+  .container {
+    padding: 50px;
+  }
+}
+
+/* Footer */
+footer {
+  position: absolute;
+  height: $footer-height;
+  width: 100%;
+  display: flex;
+
+  p {
+    margin: auto;
+  }
+}

@@ -1,0 +1,68 @@
+/* Website font */
+$font-family-website: "Verdana", sans-serif;
+
+
+/* Website colors */
+$primary-color: #f8fbf9;
+$secondary-color: #10bfeb;
+$tertiary-color: #2b2e33;
+
+
+/* Header / Main / Footer */
+
+/* Header / Navbar */
+$navbar-height: 77.5px;
+$navbar-brand-size: 25px;
+$navbar-link-size: calc($navbar-brand-size - 8px);
+$navbar-burger-border-color: #333333;
+
+/* Footer size */
+$footer-height: 50px;
+
+/* Main size */
+$main-height: calc(100vh - ($footer-height + $navbar-height));
+
+
+/* Communs variables for CRUD style */
+
+/* Box settings */
+$interface-crud-background-color: #ffffff;
+$interface-crud-size: 40%;
+$interface-phone-crud-size: 65%;
+$interface-tablet-crud-size: 100%;
+$interface-crud-box-shadow: 0 2px 2px 0 rgb(0 0 0 / 14%), 0 3px 1px -2px rgb(0 0 0 / 20%), 0 1px 5px 0 rgb(0 0 0 / 12%);
+
+/* Contents settings */
+$interface-crud-content-color: rgba(0, 0, 0, 0.54);
+$interface-crud-actions-border-top: 1px solid rgba(0, 0, 0, 0.1);
+
+/* Buttons settings */
+$button-font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+$button-transition: 0.35s;
+$interface-crud-button-cursor: pointer;
+$button-link-view: "/assets/images/user-view-icon.png";
+$button-link-update: "/assets/images/user-update-icon.png";
+$button-link-delete: "/assets/images/user-delete-icon.png";
+
+
+/* Users list cards */
+
+/* Box settings*/
+$users-card-background-color: #ffffff;
+$users-card-margin-bottom: 50px;
+$users-card-flex-basis: 35%;
+$users-card-transition: 0.25s;
+
+/* Cards header settings*/
+$users-card-page-title-size: 17.5px;
+$users-card-background-url: "/assets/images/user.png";
+$users-card-title-color: #ffffff;
+$users-card-card-title-size: 24px;
+
+
+/* User card interface size*/
+$user-card-size: 40%;
+
+
+/* Button delete color for delete interface */
+$button-delete-color: red;
